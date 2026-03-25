@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* Rules
+Leter spacing
+Big text → tighter spacing (or negative)
+Small text → normal or slightly positive
+
+line Height 
+Large text → smaller line-height
+Small text → larger line-height
+
+*/
+
+@theme {
+  --color-primary: #a39d97;
+  --color-secondary: #e8e7e1;
+  --color-accent: #39472b;
+  --font-heading: Josefin Slab;
+  --font-body: Baloo 2;
+}
+
+@layer base {
+  body,
+  p {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    line-height: 1.65;
+  }
+  h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    
+  }
+  h2 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+  }
+  h3 {
+    font-family: var(--font-heading);
+    font-size: 1.375rem;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+  }
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.005em;
+  }
+}
