@@ -1,10 +1,10 @@
 const Hero = () => {
   return (
     <section className=" relative h-screen">
-      <div className="flex items-center relative justify-center h-full overflow-x-hidden w-full">
-        <div className="flex gap-18 ">
+      <div className="flex items-center relative justify-center h-full overflow-x-hidden w-full ">
+        <div className="flex gap-6 lg:gap-18  ">
           <div className="relative mt-54">
-            <h2 className="absolute whitespace-nowrap font-semibold text-accent text-5xl -top-18 left-1/2 -translate-x-1/2 mix-blend-plus-lighter ">
+            <h2 className="absolute whitespace-nowrap font-semibold text-accent text-2xl lg:text-5xl -top-10 lg:-top-18 left-6 lg:left-1/2 -translate-x-1/2 mix-blend-plus-lighter ">
               Every Moment
             </h2>
             <svg
@@ -36,7 +36,7 @@ const Hero = () => {
               </defs>
             </svg>
           </div>
-          <div className="rounded-t-full overflow-hidden rounded-b-xl  h-96 w-58  mt-20 ">
+          <div className="rounded-t-full overflow-hidden rounded-b-xl h-80 lg:h-96 w-44 lg:w-58  mt-20 ">
             <img
               className="object-cover h-full w-full"
               src={
@@ -73,12 +73,12 @@ const Hero = () => {
                 </clipPath>
               </defs>
             </svg>
-            <h2 className="absolute whitespace-nowrap font-semibold text-accent text-5xl -bottom-28 left-1/2 -translate-x-1/2 ">
+            <h2 className="absolute whitespace-nowrap font-semibold text-accent text-2xl lg:text-5xl -bottom-10 lg:-bottom-28  lg:left-1/2 -translate-x-1/2 ">
               Deserves Sparkle
             </h2>
           </div>
         </div>
-        <div className="absolute size-280 -z-10 rounded-full border border-primary/20 -top-160 -right-40  "></div>
+        <div className="absolute  size-280 -z-10 rounded-full border border-primary/20 -top-160 -right-40  "></div>
       </div>
 
       <div className="absolute size-96 rounded-full bg-primary/40 top-0 right-4 blur-[110px] "></div>

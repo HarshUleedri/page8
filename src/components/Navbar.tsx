@@ -32,11 +32,11 @@ const Navbar = () => {
           />
         </svg>
       </div>
-      <div className=" absolute  left-1/2 -translate-x-1/2 font-heading text-3xl font-bold">
+      <div className="hidden absolute  left-1/2 -translate-x-1/2 font-heading text-3xl font-bold">
         Diamond Forest
       </div>
       <div className="flex gap-12">
-        <div>
+        <div className="text-sm lg:text-base">
           INR <span></span>
         </div>
         <div className="flex gap-4 items-center">

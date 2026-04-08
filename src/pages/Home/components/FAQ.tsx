@@ -42,14 +42,14 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="mx-auto max-w-6xl">
+    <section className="mx-auto max-w-6xl px-4 py-40 lg:py-0 lg:px-0">
       <h2 className="text-5xl mb-16 text-accent font-semibold">
         Frequently Asked Question
       </h2>
-      <div className="flex">
+      <div className="flex flex-col gap-12 lg:gap-0 lg:flex-row">
         <div className="lg:w-1/2 flex gap-8">
           <img
-            className="rounded-md rounded-tr-[200px] h-fit"
+            className="rounded-md rounded-tr-[200px] h-fit "
             src="https://ik.imagekit.io/harshdev/image-to-url/model4.png_RUYlSDylP.png"
             alt="image"
           />
@@ -60,7 +60,7 @@ const FAQ = () => {
             viewBox="0 0 24 517"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className=" mt-44 "
+            className=" hidden lg:block lg:mt-44 "
           >
             <line
               x1="11.5"

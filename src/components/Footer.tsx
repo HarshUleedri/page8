@@ -80,9 +80,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="  bg-secondary">
-      <div className="mx-auto  max-w-7xl py-20">
-        <div className="flex justify-between">
+    <footer className="  bg-secondary mt-12 lg:mt-0 ">
+      <div className="mx-auto  max-w-7xl py-16 lg:py-20 px-4 lg:px-0">
+        <div className="flex flex-col lg:flex-row justify-between">
           <div className="lg:w-1/4">
             <div className="text-3xl text-accent font-bold font-heading">
               Diamond Forest

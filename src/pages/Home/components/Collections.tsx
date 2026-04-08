@@ -40,7 +40,7 @@ const Collections = () => {
   ];
 
   return (
-    <section className="mx-auto max-w-6xl">
+    <section className="mx-auto max-w-6xl px-4 lg:px-0 lg:py-0 py-20">
       <h2 className="text-5xl font-semibold mb-4 text-accent">
         New Elegant Collection
       </h2>
@@ -49,25 +49,23 @@ const Collections = () => {
         timeless design with a touch of contemporary flair made to elevate your
         everyday sparkle.
       </p>
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-4 ">
+      <div className="grid grid-cols-1 gap-12 lg:gap-6 lg:grid-cols-4 ">
         {collection.map((item, idx) => (
           <div className="group relative space-y-4 " key={idx}>
-            <div>
+            <div className="w-full">
               <img
-                className=" absolute transition-all duration-700 ease-in-out group-hover:opacity-100 opacity-0"
+                className=" object-cover absolute transition-all duration-700 ease-in-out group-hover:opacity-100 opacity-0"
                 src={item.modelImage}
                 alt={item.name}
               />
               <img
-                className="group-hover:opacity-0 transition-all duration-700 ease-in-out opacity-100 "
+                className="group-hover:opacity-0  w-full object-cover transition-all duration-700 ease-in-out opacity-100 "
                 src={item.image}
                 alt={item.name}
               />
             </div>
             <div className="">
-              <h3 className="font-semibold text-xl text-accent">
-                {item.name}
-              </h3>
+              <h3 className="font-semibold text-xl text-accent">{item.name}</h3>
               <div>
                 <p className="text-sm font-semibold ">
                   Price: <span className="font-heading ">{item.price}</span>

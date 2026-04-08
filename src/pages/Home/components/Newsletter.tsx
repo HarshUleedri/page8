@@ -1,12 +1,13 @@
 const Newletter = () => {
   return (
-    <section className="mx-auto max-w-6xl py-40 flex flex-col gap-8 items-center">
+    <section className="mx-auto max-w-6xl  lg:py-40 flex flex-col gap-8 items-center">
       <svg
         width="799"
         height="24"
         viewBox="0 0 799 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className="hidden lg:block"
       >
         <g clip-path="url(#clip0_389_69)">
           <path
@@ -28,20 +29,20 @@ const Newletter = () => {
           </clipPath>
         </defs>
       </svg>
-      <div className="bg-secondary overflow-hidden relative w-full rounded-full ">
+      <div className="bg-secondary overflow-hidden relative w-full lg:rounded-full ">
         <img
-          className="absolute left-0 "
+          className="absolute left-0 hidden lg:block "
           src="https://ik.imagekit.io/harshdev/image-to-url/hand_jew.png_OQKc3RXQC.png"
           alt=""
         />
 
         <div className="flex items-center justify-center py-30    flex-col">
-          <h2 className="text-3xl font-heading font-semibold mb-8 text-accent">
+          <h2 className="lg:text-3xl font-heading font-semibold mb-8 text-accent">
             Newsletter
           </h2>
           <div className="flex gap-4 items-center">
             <input
-              className="bg-white  px-6  py-1 rounded placeholder:font-heading placeholder:font-bold focus:outline-none "
+              className="bg-white w-44 lg:w-full  px-6  py-1 rounded placeholder:font-heading placeholder:font-bold focus:outline-none "
               placeholder="Email"
             />
             <button className="bg-accent  px-6 text-base rounded text-secondary py-2">
@@ -50,7 +51,7 @@ const Newletter = () => {
           </div>
         </div>
         <img
-          className="absolute bottom-0 right-16 h-80"
+          className="absolute bottom-0 right-16  hidden lg:block h-80"
           src="https://ik.imagekit.io/harshdev/image-to-url/model1.png_gx2pYNC8_.png"
           alt=""
         />
@@ -62,6 +63,7 @@ const Newletter = () => {
         viewBox="0 0 800 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className="hidden lg:block"
       >
         <g clip-path="url(#clip0_389_70)">
           <path
