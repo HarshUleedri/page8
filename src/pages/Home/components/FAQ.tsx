@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 
 const FAQ = () => {
@@ -42,7 +43,13 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="mx-auto max-w-6xl px-4 py-40 lg:py-0 lg:px-0">
+    <motion.section
+      initial={{ opacity: 0, y: 50, scale: 0.9 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ amount: 0.1 }}
+      transition={{ duration: 0.8 }}
+      className="mx-auto max-w-6xl px-4 py-40 lg:py-0 lg:px-0"
+    >
       <h2 className="text-5xl mb-16 text-accent font-semibold">
         Frequently Asked Question
       </h2>
@@ -54,7 +61,19 @@ const FAQ = () => {
             alt="image"
           />
 
-          <svg
+          <motion.svg
+            initial={{
+              opacity: 0,
+              y:  10,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.8,
+              ease: "easeIn",
+            }}
             width="24"
             height="517"
             viewBox="0 0 24 517"
@@ -82,12 +101,13 @@ const FAQ = () => {
                 <rect width="24" height="24" fill="white" />
               </clipPath>
             </defs>
-          </svg>
+          </motion.svg>
         </div>
         <div className="lg:w-1/2">
           <div className="space-y-4 w-full">
             {faqItems.map((item, idx) => (
-              <div
+              <motion.div
+                layout
                 className={`${currentIndex === idx ? "bg-primary text-secondary " : "bg-secondary"} rounded-md p-4 font-medium w-full`}
                 onClick={() => setCurrentIndex(currentIndex === idx ? -1 : idx)}
                 key={idx}
@@ -135,18 +155,28 @@ const FAQ = () => {
                     </svg>
                   )}
                 </div>
-
-                {currentIndex === idx && (
-                  <p className="text-sm text-secondary/50  font-light wrap-break-word">
-                    {item.answer}
-                  </p>
-                )}
-              </div>
+                <AnimatePresence initial={false}>
+                  {currentIndex === idx && (
+                    <motion.div
+                      layout
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="overflow-hidden"
+                    >
+                      <p className="text-sm text-secondary  font-light wrap-break-word">
+                        {item.answer}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

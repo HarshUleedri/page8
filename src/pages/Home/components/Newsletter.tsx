@@ -1,13 +1,35 @@
+import { useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
+import { motion } from "motion/react";
+
 const Newletter = () => {
+  const cardContainerRef = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: cardContainerRef,
+    offset: ["start end", "end start"],
+  });
+  const topX = useTransform(scrollYProgress, [0, 1], [-500, 150]);
+  const bottomX = useTransform(scrollYProgress, [0, 1], [500, -150]);
+
   return (
-    <section className="mx-auto max-w-6xl  lg:py-40 flex flex-col gap-8 items-center">
-      <svg
+    <motion.section
+      initial={{ opacity: 0, y: 50, scale: 0.9 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ amount: 0.1 }}
+      transition={{ duration: 0.8 }}
+      ref={cardContainerRef}
+      className="mx-auto max-w-6xl  lg:py-40 flex flex-col gap-8 items-center"
+    >
+      <motion.svg
         width="799"
         height="24"
         viewBox="0 0 799 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="hidden lg:block"
+        style={{
+          x: topX,
+        }}
       >
         <g clip-path="url(#clip0_389_69)">
           <path
@@ -28,7 +50,7 @@ const Newletter = () => {
             />
           </clipPath>
         </defs>
-      </svg>
+      </motion.svg>
       <div className="bg-secondary overflow-hidden relative w-full lg:rounded-full ">
         <img
           className="absolute left-0 hidden lg:block "
@@ -57,13 +79,16 @@ const Newletter = () => {
         />
       </div>
 
-      <svg
+      <motion.svg
         width="800"
         height="24"
         viewBox="0 0 800 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="hidden lg:block"
+        style={{
+          x: bottomX,
+        }}
       >
         <g clip-path="url(#clip0_389_70)">
           <path
@@ -79,8 +104,8 @@ const Newletter = () => {
             <rect width="24" height="24" fill="white" />
           </clipPath>
         </defs>
-      </svg>
-    </section>
+      </motion.svg>
+    </motion.section>
   );
 };
 

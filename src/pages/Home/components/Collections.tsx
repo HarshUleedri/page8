@@ -1,3 +1,5 @@
+import { motion } from "motion/react";
+
 const Collections = () => {
   const collection: {
     name: string;
@@ -40,7 +42,13 @@ const Collections = () => {
   ];
 
   return (
-    <section className="mx-auto max-w-6xl px-4 lg:px-0 lg:py-0 py-20">
+    <motion.section
+      initial={{ opacity: 0, y: 50, scale: 0.9 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ amount: 0.1 }}
+      transition={{ duration: 0.8 }}
+      className="mx-auto max-w-6xl px-4 lg:px-0 lg:py-0 my-40"
+    >
       <h2 className="text-5xl font-semibold mb-4 text-accent">
         New Elegant Collection
       </h2>
@@ -78,7 +86,7 @@ const Collections = () => {
           </div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 
